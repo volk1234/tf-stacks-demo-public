@@ -6,7 +6,7 @@ required_providers {
 }
 
 provider "aws" "configurations" {
-  for_each = var.regions
+  for_each = toset(formatlist("%s", range(length(var.regions))))
 
   config {
     region = each.key
