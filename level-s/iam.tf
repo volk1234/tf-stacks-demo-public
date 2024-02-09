@@ -1,5 +1,5 @@
 data "aws_iam_policy_document" "assume_role" {
-  provider = aws.core
+
 
   statement {
     effect = "Allow"
