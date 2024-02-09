@@ -7,7 +7,7 @@ component "storage" {
     region            = each.key
     env2              = var.env
     environment_code  = "${var.env}-${each.value}"
-    queue_name        = "core-${var.env}"
+    queue_name        = "core"
     iam_role_sqs_name = "core-receiver-${var.env}"
     iam_role_sns_name = "receiver-channel-${var.env}"
   }
