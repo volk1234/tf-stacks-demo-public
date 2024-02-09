@@ -4,7 +4,7 @@ component "storage" {
   source = "./level-s"
 
   inputs = {
-    region            = var.regions[each.value]
+    region            = each.value
     environment_code  = "${var.env}-use1"
     queue_name        = "core"
     iam_role_sqs_name = "core-receiver"
