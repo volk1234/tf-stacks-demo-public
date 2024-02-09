@@ -33,6 +33,6 @@ deployment "production" {
     default_tags        = { deployment-name = "production"}
     cidr                = "10.10.0.0/16"
     workload_idp_name         = "vault-secrets"
-    identity_token_file_vault       = identity_token.vault_secrets.jwt_filename
+    identity_token_file_vault = identity_token.vault_secrets.jwt_filename
   }
 }

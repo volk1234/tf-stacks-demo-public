@@ -6,6 +6,10 @@ variable "identity_token_file" {
   type = string
 }
 
+variable "identity_token_file_vault" {
+  type = string
+}
+
 variable "role_arn" {
   type = string
 }

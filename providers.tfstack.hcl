@@ -31,7 +31,7 @@ provider "hcp" "this" {
   config {
     workload_identity {
       resource_name = var.workload_idp_name
-      token_file    = var.identity_token_file
+      token_file    = var.identity_token_file_vault
     }
   }
 }
