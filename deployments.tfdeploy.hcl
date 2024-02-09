@@ -1,5 +1,5 @@
 identity_token "aws" {
-  audience = ["<Set to your AWS IAM assume-role audience>"]
+  audience = ["aws.workload.identity"]
 }
 
 deployment "development" {
