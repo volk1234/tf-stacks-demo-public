@@ -1,6 +1,4 @@
 resource "aws_sqs_queue" "deadletter_queue" {
-  provider = aws.core
-
   name                      = local.deadletter_queue_name
   delay_seconds             = 0
   max_message_size          = 2048
@@ -10,7 +8,6 @@ resource "aws_sqs_queue" "deadletter_queue" {
 }
 
 resource "aws_sqs_queue" "core" {
-  provider = aws.core
 
   name                       = local.queue_name
   delay_seconds              = 0
@@ -23,7 +20,6 @@ resource "aws_sqs_queue" "core" {
 }
 
 resource "aws_sqs_queue_policy" "write_queue" {
-  provider = aws.core
 
   queue_url = local.queue_url
 
@@ -55,18 +51,15 @@ POLICY
 }
 
 resource "aws_sns_topic" "core_topic" {
-  provider = aws.core
 
   name = local.queue_name
   tags = local.tags
 }
 
 resource "aws_sns_topic_subscription" "sns_target" {
-  provider = aws.core
 
   topic_arn            = aws_sns_topic.core_topic.arn
   protocol             = "sqs"
   endpoint             = local.sqs_arn
   raw_message_delivery = true
 }
-

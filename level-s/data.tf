@@ -1,3 +1,1 @@
-data "aws_caller_identity" "current" {
-  provider = aws.core
-}
+data "aws_caller_identity" "current" {}
