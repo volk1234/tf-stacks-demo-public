@@ -1,6 +1,4 @@
 resource "aws_vpc" "main" {
-  provider = aws.core
-
   cidr_block = var.cidr
   tags = merge(
     {
@@ -11,8 +9,6 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "main_0" {
-  provider = aws.core
-
   vpc_id     = aws_vpc.main.id
   cidr_block = cidrsubnet(var.cidr, 1, 0)
   tags = merge(
@@ -24,8 +20,6 @@ resource "aws_subnet" "main_0" {
 }
 
 resource "aws_subnet" "main_1" {
-  provider = aws.core
-
   vpc_id     = aws_vpc.main.id
   cidr_block = cidrsubnet(var.cidr, 1, 1)
   tags = merge(

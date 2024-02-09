@@ -16,3 +16,19 @@ component "storage" {
     aws     = provider.aws.configurations[each.key]
   }
 }
+
+component "network" {
+  for_each = var.regions
+
+  source = "./level-n"
+
+  inputs = {
+    region            = each.key
+    environment_code  = "${var.env}-${each.value}"
+    cidr              = var.cidr
+  }
+
+  providers = {
+    aws     = provider.aws.configurations[each.key]
+  }
+}
