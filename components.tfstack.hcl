@@ -32,3 +32,19 @@ component "network" {
     aws     = provider.aws.configurations[each.key]
   }
 }
+
+component "compute" {
+  for_each = var.regions
+
+  source = "./level-c"
+
+  inputs = {
+    region            = each.key
+    environment_code  = "${var.env}-${each.value}"
+  }
+
+  providers = {
+    aws     = provider.aws.configurations[each.key]
+    hcp     = provider.hcp.this
+  }
+}

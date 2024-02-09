@@ -1,5 +1,4 @@
 resource "aws_launch_template" "worker_nodes" {
-  provider = aws.core
 
   name          = "${local.node_name}-lt"
   key_name      = local.node_name
@@ -34,7 +33,6 @@ resource "aws_launch_template" "worker_nodes" {
 }
 
 resource "aws_autoscaling_group" "default" {
-  provider = aws.core
 
   name                = local.node_name
   max_size            = 5

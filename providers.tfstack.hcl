@@ -3,6 +3,11 @@ required_providers {
     source  = "hashicorp/aws"
     version = "~> 5.35.0"
   }
+  
+  hcp = {
+      source  = "hashicorp/hcp"
+      version = "0.82.0"
+    }
 }
 
 provider "aws" "configurations" {
@@ -18,6 +23,15 @@ provider "aws" "configurations" {
 
     default_tags {
       tags = var.default_tags
+    }
+  }
+}
+
+provider "hcp" "this" {
+  config {
+    workload_identity {
+      resource_name = var.workload_idp_name
+      token_file    = var.identity_token_file
     }
   }
 }

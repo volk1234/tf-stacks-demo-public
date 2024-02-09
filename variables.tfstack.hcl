@@ -23,3 +23,8 @@ variable "default_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "workload_idp_name" {
+  description = "The name of the workload IDP configured in the HCP Platform for Terraform Cloud to use"
+  type        = string
+}

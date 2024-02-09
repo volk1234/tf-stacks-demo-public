@@ -3,7 +3,6 @@ data "hcp_vault_secrets_app" "aws_app" {
 }
 
 data "aws_vpc" "main" {
-  provider = aws.core
 
   filter {
     name   = "tag:Name"
@@ -12,8 +11,6 @@ data "aws_vpc" "main" {
 }
 
 data "aws_subnet" "main1" {
-  provider = aws.core
-
   filter {
     name   = "tag:Name"
     values = ["main-1-${var.environment_code}"]
@@ -21,7 +18,6 @@ data "aws_subnet" "main1" {
 }
 
 data "aws_subnet" "main2" {
-  provider = aws.core
 
   filter {
     name   = "tag:Name"
@@ -30,7 +26,6 @@ data "aws_subnet" "main2" {
 }
 
 data "aws_security_group" "https" {
-  provider = aws.core
 
   vpc_id = data.aws_vpc.main.id
 
@@ -41,7 +36,6 @@ data "aws_security_group" "https" {
 }
 
 data "aws_ami" "amazon2" {
-  provider = aws.core
 
   most_recent = true
 
