@@ -6,7 +6,7 @@ required_providers {
 }
 
 provider "aws" "configurations" {
-  for_each = toset(${var.regions})
+  for_each = var.regions
 
   config {
     region = each.key

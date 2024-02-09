@@ -5,7 +5,7 @@ identity_token "aws" {
 deployment "development" {
   variables = {
     regions             = {
-      "us-east-1" = "use1"
+      "us-east-1" : "use1"
       }
     env                 = "dev"
     role_arn            = "arn:aws:iam::056618128975:role/terraform-cloud-oidc-access-deployment-role"
