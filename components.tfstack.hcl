@@ -4,14 +4,14 @@ component "storage" {
   source = "./level-s"
 
   inputs = {
-    region            = each.value
-    environment_code  = "${var.env}-use1"
+    region            = each.key
+    environment_code  = "${var.env}-${each.value}"
     queue_name        = "core"
     iam_role_sqs_name = "core-receiver"
     iam_role_sns_name = "receiver-channel"
   }
 
   providers = {
-    aws     = provider.aws.configurations[each.value]
+    aws     = provider.aws.configurations[each.key]
   }
 }

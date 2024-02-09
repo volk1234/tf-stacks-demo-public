@@ -9,7 +9,7 @@ provider "aws" "configurations" {
   for_each = var.regions
 
   config {
-    region = each.value
+    region = each.key
 
     assume_role_with_web_identity {
       role_arn                = var.role_arn

@@ -1,5 +1,4 @@
 locals {
-  env                   = split("-", var.environment_code)[0]
   bucket_name           = "core-storage-${local.env}"
   queue_name            = "${var.queue_name}-${local.env}"
   deadletter_queue_name = "${var.queue_name}-deadletter-${local.env}"
