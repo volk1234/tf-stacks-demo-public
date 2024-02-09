@@ -1,5 +1,7 @@
 variable "environment_code" {}
 
+variable "env2" {}
+
 variable "region" {}
 
 variable "queue_name" {}
