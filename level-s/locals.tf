@@ -1,6 +1,6 @@
 locals {
   env                   = split("-", var.environment_code)[0]
-  bucket_name           = "core-storage-${local.env}"
+  bucket_name           = "core-storage-${var.environment_code}"
   queue_name            = "${var.queue_name}-${local.env}"
   deadletter_queue_name = "${var.queue_name}-deadletter-${local.env}"
   queue_url             = "https://sqs.${var.region}.amazonaws.com/${data.aws_caller_identity.current.account_id}/${local.queue_name}"
