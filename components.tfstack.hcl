@@ -1,5 +1,5 @@
 component "storage" {
-  for_each = toset(formatlist("%s", range(length(var.regions))))
+  for_each = var.regions
 
   source = "./level-s"
 
