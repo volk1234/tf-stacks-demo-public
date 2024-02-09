@@ -12,7 +12,6 @@ component "storage" {
   }
 
   providers = {
-    aws     = provider.aws.core[each.value]
-    local   = provider.local.this
+    aws     = provider.aws.configurations[each.value]
   }
 }

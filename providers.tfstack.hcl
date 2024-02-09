@@ -3,19 +3,9 @@ required_providers {
     source  = "hashicorp/aws"
     version = "~> 5.35.0"
   }
-
-  hcp = {
-    source  = "hashicorp/hcp"
-    version = "~> 0.82.0"
-  }
-
-  local = {
-    source = "hashicorp/local"
-    version = "~> 2.4.0"
-  }
 }
 
-provider "aws" "core" {
+provider "aws" "configurations" {
   for_each = var.regions
 
   config {
@@ -31,5 +21,3 @@ provider "aws" "core" {
     }
   }
 }
-
-provider "local" "this" {}
