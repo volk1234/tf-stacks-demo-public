@@ -1,5 +1,5 @@
 variable "regions" {
-  type = map(any)
+  type = map(string)
 }
 
 variable "identity_token_file" {
