@@ -1,12 +1,12 @@
 required_providers {
   aws = {
     source  = "hashicorp/aws"
-    version = "~> 5.35.0"
+    version = "~> 5.78.0"
   }
   
   hcp = {
       source  = "hashicorp/hcp"
-      version = "0.82.0"
+      version = "0.99.0"
     }
 }
 
