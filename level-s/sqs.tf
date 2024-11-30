@@ -41,7 +41,7 @@ resource "aws_sqs_queue_policy" "write_queue" {
       "Resource": "${aws_sqs_queue.core.arn}",
       "Condition": {
         "ArnEquals": {
-          "aws:SourceArn": "arn:aws:sns:*:${data.aws_caller_identity.current.account_id}:${var.queue_name}-${local.env}"
+          "aws:SourceArn": "arn:aws:sns:*:${data.aws_caller_identity.current.account_id}:${var.queue_name}-${var.environment_code}"
         }
       }
     }
