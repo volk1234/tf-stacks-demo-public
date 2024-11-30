@@ -7,7 +7,7 @@ identity_token "vault_secrets" {
 }
 
 deployment "development" {
-  variables = {
+  inputs = {
     regions             = {
       "us-east-1" : "use1",
       }
@@ -22,7 +22,7 @@ deployment "development" {
 }
 
 deployment "production" {
-  variables = {
+  inputs = {
     regions             = {
       "us-east-1" : "use1",
       "eu-west-1" : "euw1",
